@@ -10,5 +10,5 @@ class Solution(object):
             e=e+i+o+u
             i=i+o+u
             o=o+u
-        #return (n+1)*(n+2)*(n+3)*(n+4)/ 24
+        #return (n+1)*(n+2)*(n+3)*(n+4)/ 24         4隔板，n+4个插入点（n+1个实际点，三个虚拟点，分别为，2个重叠，3个重叠，4个重叠一起）
         return a+e+i+o+u
