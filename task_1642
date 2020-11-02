@@ -1,0 +1,20 @@
+import heapq
+class Solution(object):
+    def furthestBuilding(self, heights, bricks, ladders):
+        """
+        :type heights: List[int]
+        :type bricks: int
+        :type ladders: int
+        :rtype: int
+        """
+        queue=list()
+        sumbricks=0
+        for i in range(1,len(heights)):
+            deitaH=heights[i]-heights[i-1]
+            if deitaH>0:
+                heapq.heappush(queue,deitaH)
+            if(len(queue)>ladders):
+                sumbricks+=heapq.heappop(queue)
+            if(sumbricks>bricks):
+                return i-1
+        return len(heights)-1
