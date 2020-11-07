@@ -1,0 +1,17 @@
+#287
+class Solution(object):
+    def findDuplicate(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        s2=list(nums)
+        s1=list(set(nums))
+        s1.sort(key=s2.index)
+        
+        
+
+        for i in range(len(s1)):
+            if(s1[i]!=s2[i]):
+                return s2[i]
+        return s2[-1]
