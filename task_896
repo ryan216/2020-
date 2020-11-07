@@ -1,0 +1,14 @@
+#896
+class Solution(object):
+    def isMonotonic(self, A):
+        """
+        :type A: List[int]
+        :rtype: bool
+        """
+        increase, decrease = False, False
+        for i in range(len(A)-1):
+            if A[i] < A[i+1]:
+                increase = True
+            elif A[i] > A[i+1]:
+                decrease = True
+        return not (increase and decrease)
