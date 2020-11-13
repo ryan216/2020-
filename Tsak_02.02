@@ -1,0 +1,23 @@
+//02.02    slow-and-quick
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     struct ListNode *next;
+ * };
+ */
+
+int kthToLast(struct ListNode* head, int k)
+{
+    struct ListNode *p=head,*q=head;
+    while(k--!=0)
+    {
+        p=p->next;
+    }
+    while(p!=NULL)
+    {
+        p=p->next;
+        q=q->next;
+    }
+    return q->val;
+}
